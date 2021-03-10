@@ -1,0 +1,24 @@
+{
+  "name": "playwright-jest-ts-cli",
+  "version": "1.0.0",
+  "description": "project template to setup jest playwright testing",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "testing",
+    "setup"
+  ],
+  "author": "Lawrence Turcotte",
+  "license": "MPL",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "jest": "^26.6.3",
+    "jest-playwright-preset": "^1.4.7",
+    "playwright-chromium": "^1.9.1",
+    "playwright-firefox": "^1.9.1",
+    "playwright-webkit": "^1.9.1",
+    "ts-jest": "^26.5.2"
+  }
+}
