@@ -1,6 +1,6 @@
 # Playwright with Jest and typescript
 
-This setup is aimed at the test writer. For example **typescript** is used to validate test code but also to provide code completion with **Visual Studio code** so that the test writer does no have to lookup arguments to **Playwright** invocations or **Jest** assertions. This provides a starting project as well as hello world example to verify that the test authoring setup is functional. 
+This setup is aimed at the test writer. For example **typescript** is used to validate test code but also to provide code completion with **Visual Studio code** so that the test writer does not have to lookup arguments to **Playwright** invocations or **Jest** assertions. This provides a starting project as well as hello world example to verify that the test authoring setup is functional. 
 
 ## Requirements
 
@@ -154,6 +154,28 @@ Then no more trouble o run `jest-playwright` tests without the dialog asking you
 
 > Note: you must turn your firewall back on after testing.
 
-## Jest run CLI debug mode
+## Jest playwright run CLI debug mode
 
-> TODO
+Start the `playwright` browser debug session by prefixing the jest test runner command with `PWDEBUG=1` to start playwright in debug mode with a debugging window and make the browser visible even though the configuration is for a headless browser test
+
+> Note: `npx jest` is a way of running `jest` installed within your project instead of using `npm test`
+
+```sh
+▶ PWDEBUG=1 npx jest
+
+ RUNS   browser: chromium  tests/example.test.ts
+```
+Then you get a blank **incognito** mode chrome browser and a playwright debug window
+> Note: chrome browser is launched in incognito mode for web testing to avoid side effects from previous testing sessions. As such all cookies, sessions etc will have to be created from scratch. For example, you can always setup jest to login before each test.  
+
+Then you hit the single step button as shown in debug window for the first test within `example.test.ts` as shown here
+
+![](docs/images/playwright-debug-window-before-test.png)
+
+When you complete your first test you should see the following output in the bottom pane of the playwright debug window indicating that you have successfully completed the test as shown here
+
+![](docs/images/playwright-debug-window-after-success-test.png)
+
+And the browser should look like this, showing definition for agile along with the adjective attribute and the css path highlighted in a grey box `div.vmod > div.vmod:first-child i > span`
+
+![](docs/images/chrome-browser-after-success-test.png)
