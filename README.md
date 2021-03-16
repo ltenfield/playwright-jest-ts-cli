@@ -55,7 +55,7 @@ found 0 vulnerabilities
 > Note: different browsers can be configured to run under `browsers` as an array so possibly all 3 browser types can run by repeating the tests for each browser.
 
 > Note: the *webkit* browser configuration when executing test within MacOS is **Safari**
-```json
+```
 module.exports = {
   //browsers: ["chromium", "firefox", "webkit"],
   browsers: ["chromium"],
